@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Pantalla de bienvenida -->
+  <section id="pantalla-inicio" class="pantalla activa">
+    <h1>¡BIENVENIDO!</h1>
+    <h2>A Creative Card</h2>
+    <p>
+      Tu compañero ideal para generar cartas aleatorias que te permitan
+      desarrollar ideas creativas para tus proyectos.
+    </p>
+    <button onclick="mostrarJuego()">Empieza ya</button>
+  </section>
+
+  <!-- Pantalla del juego -->
+  <section id="pantalla-juego" class="pantalla">
+    <h2>Ya puedes empezar, elige cuántas cartas quieres generar aleatoriamente</h2>
+    <div class="botones">
+      <button onclick="sacar(1)">1 Carta</button>
+      <button onclick="sacar(2)">2 Cartas</button>
+      <button onclick="sacar(3)">3 Cartas</button>
+      <button onclick="sacar(4)">4 Cartas</button>
+    </div>
+    <div id="resultado"></div>
+
+    <!-- Botón para ir al glosario -->
+    <button onclick="mostrarGlosario()">Glosario</button>
+
+    <!-- Botón para regresar -->
+    <button class="boton-volver" onclick="volverInicio()">Volver al inicio</button>
+  </section>
+
+<!-- Pantalla del glosario -->
+<section id="pantalla-glosario" class="pantalla">
+  <h2>Glosario de Cartas</h2>
+  <p>Ingresa el número de la carta para conocer su significado:</p>
+  
+  <input type="number" id="numeroCarta" placeholder="Ejemplo: 20" min="1">
+  <button onclick="buscarSignificado()">Buscar</button>
+  
+  <div id="significado"></div> <!-- Aquí aparecerá carta + explicación -->
+  
+  <button class="boton-volver" onclick="mostrarJuego()">Volver al juego</button>
+</section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

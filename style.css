@@ -1,0 +1,176 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fondo animado */
+body {
+  height: 100vh;
+  font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+  background: linear-gradient(-45deg, #8e44ad, #3498db, #2ecc71, #f39c12);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; /* centramos textos globalmente */
+  padding: 10px; /* para que no pegue en bordes en móviles */
+}
+
+/* Animación del fondo */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Pantallas */
+.pantalla {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 700px;
+  width: 100%; /* 👈 que se adapte siempre */
+  padding: 40px 20px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.pantalla.activa {
+  display: flex;
+}
+
+/* Textos */
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+  color: #f5f3ff;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin: 15px 0;
+  color: #e0d7ff;
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 25px;
+  max-width: 600px; /* 👈 limita ancho pero centrado */
+  width: 100%;
+  text-align: center;
+}
+
+/* Botones */
+button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background: #3a0ca3;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  background: #560bad;
+  transform: scale(1.1);
+}
+
+/* Botón volver */
+.boton-volver {
+  margin-top: 20px;
+  background: #39e650;
+}
+
+.boton-volver:hover {
+  background: #2fcf44;
+}
+
+/* Contenedor del resultado */
+#resultado {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilo de cada carta */
+.carta {
+  width: 220px;
+  height: auto;
+  margin: 10px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.carta:hover {
+  transform: scale(1.1);
+}
+
+/* ---- 📱 RESPONSIVE ---- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  h1 { font-size: 2.5em; }
+  .carta { width: 180px; }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  h1 { font-size: 2em; }
+  h2 { font-size: 1.3em; }
+  p  { font-size: 1em; }
+
+  #resultado {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carta {
+    width: 90%;
+    max-width: 300px;
+  }
+}
+
+/* Input en glosario */
+#pantalla-glosario input {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 8px;
+  border: none;
+  margin: 15px 0;
+}
+
+#significado {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.2em;
+  background: rgba(255,255,255,0.9);
+  color: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  max-width: 90%; /* 👈 se adapta a móviles */
+  text-align: center;
+}
+
+#significado img {
+  width: 180px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
